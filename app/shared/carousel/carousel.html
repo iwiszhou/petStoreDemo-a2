@@ -1,0 +1,20 @@
+<div class="custom-carousel">
+	<div class="carousel-container">
+		<div id="carousel" [ngStyle]="carouselStyle">
+			<figure *ngFor=" let i of images"
+				[ngStyle]="i.figureStyle">
+				<img [src]=" '/images/' + i.image ">
+			</figure>
+		</div>
+	</div>
+	<div class="text-center">
+		<span (click)="nextImage()">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</span>
+		<span>&nbsp;</span>
+		<span (click)="previousImage()">
+			<i class="fa fa-arrow-right" aria-hidden="true"></i>
+		</span>
+			
+	</div>
+</div>

@@ -1,0 +1,38 @@
+.navbar.navbar-default{
+  background-color: #1b1b1b;
+  letter-spacing: 1px;
+  font-family: fantasy;
+  li{
+    text-align: center;
+    font-size: 16px;
+    margin: 20px;
+    a.whiteText{
+      color: white;
+    }
+  }
+  .brand{
+   min-width: 150px; 
+   .navbar-brand{
+      color: white;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-size: 22px;
+    }
+  }
+
+  @media (min-width: 768px){
+    li{
+      margin: 0;
+      font-size: inherit;
+      
+      a.whiteText{
+        &:hover, &:focus{
+          color: white;
+          height: 50px;
+          border-bottom: 4px solid white;
+        }
+      }
+    }
+  }
+}
+

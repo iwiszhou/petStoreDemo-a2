@@ -1,0 +1,71 @@
+<div class="create-pet">
+	<div *ngIf="successMsg" class="alert alert-success">{{successMsg}} {{countDown}}s</div>
+
+	<form #petForm="ngForm" novalidate (ngSubmit)="submitForm()" *ngIf="!successMsg">
+
+      <div class="form-row">
+        <input
+          class="custom-input form-control"
+          type="text"
+          name="name"
+          required="required"
+          placeholder="Enter pet name (required)"
+          maxlength="15"
+          [(ngModel)]="pet.name">
+      </div>
+
+      <div class="form-row">
+        <input
+          class="custom-input form-control"
+          type="text"
+          name="category"
+          placeholder="Enter category name"
+          maxlength="15"
+          [(ngModel)]="pet.categoryName">
+      </div>
+
+      <div class="form-row">
+        <input
+          class="custom-input form-control"
+          type="text"
+          name="photos"
+          required="required"
+          placeholder="Enter photo urls ( use comma to separate - required)"
+          maxlength="100"
+          [(ngModel)]="pet.photoUrls">
+      </div>
+
+      <div class="form-row">
+        <input
+          class="custom-input form-control"
+          type="text"
+          name="tags"
+          placeholder="Enter tags ( use comma to separate )"
+          maxlength="100"
+          [(ngModel)]="pet.tags">
+      </div>
+
+      <div class="form-row status-dp">
+        <select name="singleSelect" id="singleSelect" [(ngModel)]="pet.status" required>
+          <option *ngFor="let option of status" [value]="option.value">{{option.name}}</option>
+        </select>
+      </div>
+
+      
+      <div class="btns">
+        <div class="btn-left">
+          <button class="submit-btn default-btn" type="submit" [disabled]="!petForm.form.valid || submitting">
+             Create<span *ngIf="submitting" class="loadingSpinner"><i class="fa-li fa fa-spinner fa-spin"></i></span>
+          </button>
+        </div>
+        <div class="btn-left">
+          <button class="cancel default-btn" type="button" (click)="back();$event.stopPropagation();">Cancel</button>
+        </div>
+      </div>
+      
+    </form>
+
+    <div class="error-msg" *ngIf="errorMsg">
+      {{ errorMsg }}
+    </div>
+</div>

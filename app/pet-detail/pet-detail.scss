@@ -1,0 +1,78 @@
+.pet-detail{
+	.images{
+		display: flex;
+		flex-flow: row wrap;
+		.image{
+			flex: 1 auto;
+			text-align: center;
+			img{
+				width: 300px;
+				transform: scale(1);
+				transition: all .5s ease;
+				&:hover{
+					transform: scale(1.1);
+					border-radius:5px;
+				}
+			}
+		}
+	}
+
+	.details{
+		width: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		.detail-row{
+			display: flex;
+			flex-flow: row wrap;
+			border-bottom: 1px solid;
+    		padding: 7px;
+    		&:hover{
+    			background-color: #ADADAC;
+    		}
+			.left{
+				flex: 0 80px;
+				font-weight: 500;
+			}
+			.right{
+				flex: 1 auto;
+				border-left: 1px solid;
+    			padding-left: 17px;
+				.tag{
+					padding: 2px 11px;
+					margin: 3px;
+					background-color: #ADADA8;
+					border: 1px solid #ddd;
+					color: black;
+					border-radius: 5px;
+					text-transform: capitalize;
+				}
+				.status{
+					padding: 2px 11px;
+					margin: 3px;
+					border-radius: 5px;
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+
+	.btns{
+		margin-bottom: 20px;
+	}
+
+	@media (min-width: 768px){
+		min-height: 400px;
+		.details{
+			width: 500px;
+			margin: 0 auto;
+			padding: 38px;
+			margin-top: 10px;
+			margin-bottom: 20px;
+			border: 1px solid #eee;
+    		box-shadow: 1px 1px 1px 2px #ddd;
+			.left{
+				flex: 0 100px;
+			}
+		}
+	}
+}

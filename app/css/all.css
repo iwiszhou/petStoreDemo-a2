@@ -1,0 +1,520 @@
+/* line 1, ../../app/styles/scss/spinner.scss */
+#full-screen-spinner {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+/* line 13, ../../app/styles/scss/spinner.scss */
+#full-screen-spinner:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* line 7, ../../app/scripts/main/main.scss */
+body {
+  padding: 0;
+  background-color: #fafafa;
+}
+/* line 10, ../../app/scripts/main/main.scss */
+body .container-fluid {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 16, ../../app/scripts/main/main.scss */
+.error-msg {
+  color: #d9534f;
+}
+
+/* line 20, ../../app/scripts/main/main.scss */
+.warn-msg {
+  color: #f0ad4e;
+}
+
+/* line 24, ../../app/scripts/main/main.scss */
+.btn {
+  border: 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/** Custom default input style **/
+/* line 31, ../../app/scripts/main/main.scss */
+.custom-input {
+  box-shadow: none;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 100;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  margin-bottom: 10px;
+}
+/* line 42, ../../app/scripts/main/main.scss */
+.custom-input:focus {
+  border-color: none;
+  box-shadow: none;
+}
+
+/** Custom default button style **/
+/* line 49, ../../app/scripts/main/main.scss */
+.default-btn {
+  background: rgba(0, 133, 215, 0.6);
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 3px 0px 0px #0085d7;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 100;
+  padding: 10px 15px;
+  margin-bottom: 3px;
+  border: none;
+  cursor: pointer;
+  font: 300 14px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+/* line 64, ../../app/scripts/main/main.scss */
+.default-btn:active {
+  outline: none;
+  margin-top: 2px;
+  box-shadow: 0 1px 0px 0px #0085d7;
+  margin-bottom: 1px;
+}
+/* line 70, ../../app/scripts/main/main.scss */
+.default-btn:focus {
+  outline: none;
+}
+/* line 73, ../../app/scripts/main/main.scss */
+.default-btn[disabled] {
+  background: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+  box-shadow: 0 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+/* line 78, ../../app/scripts/main/main.scss */
+.default-btn .loadingSpinner {
+  position: relative;
+  float: right;
+  margin-left: 45px;
+}
+/* line 82, ../../app/scripts/main/main.scss */
+.default-btn .loadingSpinner i {
+  color: black;
+  margin-left: 5px;
+}
+
+/* line 1, ../../app/scripts/pets/pets.scss */
+.pets {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+/* line 6, ../../app/scripts/pets/pets.scss */
+.pets .item-container {
+  -ms-flex: 1 100%;
+      flex: 1 100%;
+  perspective: 600;
+  position: relative;
+  margin: 30px 5px;
+}
+/* line 11, ../../app/scripts/pets/pets.scss */
+.pets .item-container .item {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  box-shadow: 3px -1px 6px 2px #ddd;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+}
+/* line 20, ../../app/scripts/pets/pets.scss */
+.pets .item-container .item .side {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+/* line 22, ../../app/scripts/pets/pets.scss */
+.pets .item-container .item .side .image-wrap {
+  transition: transform .5s ease;
+}
+/* line 24, ../../app/scripts/pets/pets.scss */
+.pets .item-container .item .side .image-wrap img {
+  width: 300px;
+  height: 300px;
+}
+/* line 29, ../../app/scripts/pets/pets.scss */
+.pets .item-container .item .side.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  background: white;
+  transform: rotateY(180deg);
+  transition: opacity 1.5s ease;
+}
+/* line 43, ../../app/scripts/pets/pets.scss */
+.pets .item-container .item .side.back .small-image {
+  transition: transform 2s ease;
+  -ms-transform: scale(0.3);
+      transform: scale(0.3);
+  margin-bottom: 10px;
+}
+/* line 48, ../../app/scripts/pets/pets.scss */
+.pets .item-container .item .side.back .small-image img {
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 1px 1px #ddd;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+/* line 60, ../../app/scripts/pets/pets.scss */
+.pets .item-container .item:hover {
+  transform: rotateY(180deg);
+}
+/* line 62, ../../app/scripts/pets/pets.scss */
+.pets .item-container .item:hover .back {
+  opacity: 1;
+}
+/* line 64, ../../app/scripts/pets/pets.scss */
+.pets .item-container .item:hover .back .small-image {
+  -ms-transform: scale(1);
+      transform: scale(1);
+}
+@media (min-width: 768px) {
+  /* line 1, ../../app/scripts/pets/pets.scss */
+  .pets {
+    min-height: 400px;
+  }
+  /* line 74, ../../app/scripts/pets/pets.scss */
+  .pets .item-container {
+    -ms-flex: 1 auto;
+        flex: 1 auto;
+  }
+}
+
+/* line 2, ../../app/scripts/footer/footer.scss */
+.footer-bar .top {
+  display: none;
+}
+/* line 5, ../../app/scripts/footer/footer.scss */
+.footer-bar .content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  color: white;
+  background-color: #1b1b1b;
+  letter-spacing: 1px;
+  font-family: fantasy;
+}
+/* line 12, ../../app/scripts/footer/footer.scss */
+.footer-bar .content .link {
+  margin: 5px;
+  padding: 5px;
+  border-bottom: 1px dotted white;
+}
+/* line 16, ../../app/scripts/footer/footer.scss */
+.footer-bar .content .link a {
+  color: white;
+}
+/* line 21, ../../app/scripts/footer/footer.scss */
+.footer-bar .content .left, .footer-bar .content .middle, .footer-bar .content .right {
+  -ms-flex: 1 100%;
+      flex: 1 100%;
+  padding: 20px;
+}
+/* line 27, ../../app/scripts/footer/footer.scss */
+.footer-bar .content .middle .address {
+  padding: 10px 0 20px 9px;
+}
+/* line 31, ../../app/scripts/footer/footer.scss */
+.footer-bar .content .middle .phone, .footer-bar .content .middle .email {
+  padding: 10px 0 5px 9px;
+}
+/* line 33, ../../app/scripts/footer/footer.scss */
+.footer-bar .content .middle .phone a, .footer-bar .content .middle .email a {
+  color: white;
+}
+/* line 39, ../../app/scripts/footer/footer.scss */
+.footer-bar .content .right {
+  display: none;
+}
+@media (min-width: 768px) {
+  /* line 46, ../../app/scripts/footer/footer.scss */
+  .footer-bar .top {
+    display: block;
+    width: 100%;
+    height: 228px;
+    background-image: url(/images/footer-pets.png);
+    background-position-y: 100%;
+  }
+  /* line 55, ../../app/scripts/footer/footer.scss */
+  .footer-bar .content .left, .footer-bar .content .middle, .footer-bar .content .right {
+    -ms-flex: 1 auto;
+        flex: 1 auto;
+  }
+  /* line 59, ../../app/scripts/footer/footer.scss */
+  .footer-bar .content .right {
+    display: initial;
+    text-align: center;
+    padding-top: 34px;
+  }
+  /* line 63, ../../app/scripts/footer/footer.scss */
+  .footer-bar .content .right img {
+    width: 200px;
+  }
+}
+
+/* line 1, ../../app/scripts/menuBar/menuBar.scss */
+.navbar.navbar-default {
+  background-color: #1b1b1b;
+  letter-spacing: 1px;
+  font-family: fantasy;
+}
+/* line 5, ../../app/scripts/menuBar/menuBar.scss */
+.navbar.navbar-default li {
+  text-align: center;
+  font-size: 16px;
+  margin: 20px;
+}
+/* line 9, ../../app/scripts/menuBar/menuBar.scss */
+.navbar.navbar-default li a.whiteText {
+  color: white;
+}
+/* line 13, ../../app/scripts/menuBar/menuBar.scss */
+.navbar.navbar-default .brand {
+  min-width: 150px;
+}
+/* line 15, ../../app/scripts/menuBar/menuBar.scss */
+.navbar.navbar-default .brand .navbar-brand {
+  color: white;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 22px;
+}
+@media (min-width: 768px) {
+  /* line 24, ../../app/scripts/menuBar/menuBar.scss */
+  .navbar.navbar-default li {
+    margin: 0;
+    font-size: inherit;
+  }
+  /* line 29, ../../app/scripts/menuBar/menuBar.scss */
+  .navbar.navbar-default li a.whiteText:hover, .navbar.navbar-default li a.whiteText:focus {
+    color: white;
+    height: 50px;
+    border-bottom: 4px solid white;
+  }
+}
+
+/* line 2, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .images {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+}
+/* line 5, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .images .image {
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+  text-align: center;
+}
+/* line 8, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .images .image img {
+  width: 300px;
+  -ms-transform: scale(1);
+      transform: scale(1);
+  transition: all .5s ease;
+}
+/* line 12, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .images .image img:hover {
+  -ms-transform: scale(1.1);
+      transform: scale(1.1);
+  border-radius: 5px;
+}
+/* line 20, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .details {
+  width: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* line 24, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .details .detail-row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  border-bottom: 1px solid;
+  padding: 7px;
+}
+/* line 29, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .details .detail-row:hover {
+  background-color: #ADADAC;
+}
+/* line 32, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .details .detail-row .left {
+  -ms-flex: 0 80px;
+      flex: 0 80px;
+  font-weight: 500;
+}
+/* line 36, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .details .detail-row .right {
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+  border-left: 1px solid;
+  padding-left: 17px;
+}
+/* line 40, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .details .detail-row .right .tag {
+  padding: 2px 11px;
+  margin: 3px;
+  background-color: #ADADA8;
+  border: 1px solid #ddd;
+  color: black;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+/* line 49, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .details .detail-row .right .status {
+  padding: 2px 11px;
+  margin: 3px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+/* line 59, ../../app/scripts/petDetail/petDetail.scss */
+.pet-detail .btns {
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  /* line 1, ../../app/scripts/petDetail/petDetail.scss */
+  .pet-detail {
+    min-height: 400px;
+  }
+  /* line 65, ../../app/scripts/petDetail/petDetail.scss */
+  .pet-detail .details {
+    width: 500px;
+    margin: 0 auto;
+    padding: 38px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    box-shadow: 1px 1px 1px 2px #ddd;
+  }
+  /* line 73, ../../app/scripts/petDetail/petDetail.scss */
+  .pet-detail .details .left {
+    -ms-flex: 0 100px;
+        flex: 0 100px;
+  }
+}
+
+/* line 1, ../../app/scripts/createPet/createPet.scss */
+.create-pet {
+  margin: 0 auto;
+  margin-top: 50px;
+}
+/* line 5, ../../app/scripts/createPet/createPet.scss */
+.create-pet form .status-dp {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* line 8, ../../app/scripts/createPet/createPet.scss */
+.create-pet form .status-dp select {
+  border: 1px solid;
+}
+/* line 12, ../../app/scripts/createPet/createPet.scss */
+.create-pet form .btns {
+  margin-top: 27px;
+}
+/* line 14, ../../app/scripts/createPet/createPet.scss */
+.create-pet form .btns .btn-left {
+  float: none;
+  width: 100%;
+}
+/* line 17, ../../app/scripts/createPet/createPet.scss */
+.create-pet form .btns .btn-left .submit-btn, .create-pet form .btns .btn-left .cancel {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  /* line 1, ../../app/scripts/createPet/createPet.scss */
+  .create-pet {
+    min-height: 400px;
+    max-width: 500px;
+  }
+  /* line 30, ../../app/scripts/createPet/createPet.scss */
+  .create-pet form .status-dp select {
+    border: none;
+  }
+  /* line 35, ../../app/scripts/createPet/createPet.scss */
+  .create-pet form .btns .btn-left {
+    float: left;
+    width: auto;
+  }
+  /* line 38, ../../app/scripts/createPet/createPet.scss */
+  .create-pet form .btns .btn-left .submit-btn, .create-pet form .btns .btn-left .cancel {
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  /* line 43, ../../app/scripts/createPet/createPet.scss */
+  .create-pet form .btns .btn-left .cancel {
+    margin-left: 40px;
+  }
+}
+
+/* line 2, ../../app/scripts/shared/carousel/carousel.scss */
+.custom-carousel .carousel-container {
+  width: 210px;
+  height: 210px;
+  position: relative;
+  perspective: 1000px;
+  margin: 0 auto;
+}
+/* line 10, ../../app/scripts/shared/carousel/carousel.scss */
+.custom-carousel #carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+/* line 16, ../../app/scripts/shared/carousel/carousel.scss */
+.custom-carousel #carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 186px;
+  height: 186px;
+  left: 10px;
+  top: 10px;
+  border: 2px solid black;
+}
+/* line 26, ../../app/scripts/shared/carousel/carousel.scss */
+.custom-carousel #carousel figure img {
+  width: 186px;
+  height: 186px;
+  opacity: 0.9;
+}
+
+/*# sourceMappingURL=all.css.map */

@@ -1,0 +1,51 @@
+.create-pet{
+	margin: 0 auto;
+    margin-top: 50px;
+	form{
+		.status-dp{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			select{
+				border: 1px solid;
+			}
+		}
+		.btns{
+			margin-top: 27px;
+			.btn-left{
+				float: none;
+				width: 100%;
+				.submit-btn,.cancel{
+					width: 100%;
+					margin-top: 5px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+	@media (min-width: 768px){
+		min-height: 400px;
+		max-width: 500px;
+		form{
+			.status-dp{
+				select{
+					border:none;
+				}
+			}
+			.btns{
+		        .btn-left{
+					float:left;
+					width: auto;
+					.submit-btn,.cancel{
+						width: auto;
+						margin-top: 0;
+						margin-bottom: 0;
+					}
+					.cancel{
+						margin-left: 40px;
+					}  
+		        }
+		        
+		    }
+		}
+	}
+}

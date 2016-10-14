@@ -1,0 +1,21 @@
+<div class="pets">
+	<div *ngIf="errorMsg" class="error-msg">{{errorMsg}}</div>
+	<div class="item-container" *ngFor="let pet of pets">
+		<div class="item">
+			<div class="side">
+				<div class="image-wrap">
+					<img [src]=" '/images/' + pet.photoUrls[0]">
+				</div>
+			</div>
+
+			<div class="side back">
+				<div class="small-image">
+					<img [src]=" '/images/' + pet.photoUrls[0]">
+				</div>
+				<div>Name   : {{pet.name}}</div>
+				<div>Status :{{pet.status}}</div>
+				<div><a [routerLink]="['/petDetail', pet.id]">More Detail</a></div>
+			</div>
+		</div>
+	</div>
+</div>

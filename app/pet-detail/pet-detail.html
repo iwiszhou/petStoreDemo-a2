@@ -1,0 +1,68 @@
+<div class="pet-detail">
+	<div *ngIf="successMsg" class="alert alert-success">{{successMsg}} {{countDown}}s</div>
+
+	<div *ngIf="errorMsg" class="error-msg text-center">{{errorMsg}}</div>
+
+	<div *ngIf="!successMsg && !errorMsg && pet">
+		<!--Hack to show cool carousle component - only for 5 images !!! -->
+		<div class="images" *ngIf="pet.photoUrls.length==1">
+			<div class="image" *ngFor=" let image of pet.photoUrls">
+				<img [src]=" '/images/' + image ">
+			</div>
+		</div>
+		<div *ngIf="pet.photoUrls.length > 1">
+			<custom-carousel [images]="pet.photoUrls"></custom-carousel>
+		</div>
+
+		<div class="details">
+			<div class="detail-row">
+				<div class="left">
+					ID
+				</div>
+				<div class="right">
+					{{pet.id}}
+				</div>
+			</div>
+
+			<div class="detail-row">
+				<div class="left">
+					Name
+				</div>
+				<div class="right">
+					{{pet.name}}
+				</div>
+			</div>
+
+			<div class="detail-row">
+				<div class="left">
+					Category
+				</div>
+				<div class="right">
+					{{pet.category?.name}}
+				</div>
+			</div>
+
+			<div class="detail-row">
+				<div class="left">
+					Status
+				</div>
+				<div class="right">
+					<span class="status" [ngClass]="{ 'btn-success' : pet.status==='available' , 'btn-warning' : pet.status==='pending' , 'btn-danger' : pet.status==='sold' }">{{pet.status}}</span>
+				</div>
+			</div>
+
+			<div class="detail-row">
+				<div class="left">
+					Tags
+				</div>
+				<div class="right">
+					<span class="tag" *ngFor=" let tag of pet.tags">{{ tag.name}}</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="btns text-center">
+			<button class="default-btn" (click)="deletePet(pet.id,$event)">Delete</button>
+		</div>
+	</div>
+</div>
